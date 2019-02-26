@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="add_gdg">¿No pudo encontrar un GDG en su región? Genial, adelante y empieza uno. ¡Rellene el siguiente
+        formulario y espere tener noticias de nosotros en breve!
+    </string>
+    <string name="application_submitted">Tienes tu solicitud de solicitud !! Oh bueno, en realidad no. Este es un
+        formulario de prueba sólo para fines educativos. Si realmente desea enviar su solicitud, visite el sitio web!
+    </string>
+    <string name="gdg_search">Búsqueda GDG</string>
+    <string name="gdg_apply">Aplicar para ejecutar GDG</string>
+    <string name="gdgs_are">Los GDG son ...</string>
+    <string name="gdg_description_long">Los GDG son grupos locales de desarrolladores que están específicamente
+        interesados ​​en los productos y API de Google. Cada grupo local se denomina capítulo GDG y puede albergar una
+        variedad de actividades técnicas para desarrolladores, desde solo unas pocas personas que se reúnen para ver
+        nuestros últimos videos, grandes reuniones con demostraciones y charlas tecnológicas, o hackathons. Google
+        Developers admite y reconoce los capítulos de GDG, pero no los posee ni los administra.
+    </string>
+    <string name="about_google_developer_groups">Acerca de los Grupos de Desarrolladores de Google</string>
+    <string name="gdg_description_bullets">️Corrido por personas apasionadas en comunidades de desarrolladores locales
+         ️Un grupo para compartir ideas y establecer contactos con otros desarrolladores.  Un lugar para aprender sobre
+        las tecnologías de Google y las herramientas de desarrollo.  Abierto y gratuito para todos los interesados.
+    </string>
+    <string name="waiting_for_location_and_network">Esperando localización y resultado de red.  Si se ejecuta en un
+        emulador, abra la aplicación Mapas para habilitar los servicios de ubicación.
+    </string>
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="app_name">GDG</string>
+</resources>

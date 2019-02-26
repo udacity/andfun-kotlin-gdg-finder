@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout">
+    <data>
+        <variable
+                name="chapter"
+                type="com.example.android.gdgfinder.network.GdgChapter"/>
+        <variable
+                name="clickListener"
+                type="com.example.android.gdgfinder.search.GdgClickListener"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.example.android.gdg.gdglist.GdgListFragment"
+            android:onClick="@{() -> clickListener.onClick(chapter)}">
+
+        <ImageView
+                android:id="@+id/gdg_image"
+                android:layout_width="50dp"
+                android:layout_height="76dp"
+                app:srcCompat="@drawable/ic_gdg"
+                android:layout_marginBottom="26dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginLeft="16dp"
+                android:contentDescription="TODO"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+                android:id="@+id/chapter_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{chapter.name}"
+                app:layout_constraintStart_toEndOf="@+id/gdg_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="GDG Mountain View is really long so it will wrap in tools"
+                android:textAppearance="?textAppearanceHeadline6"
+                android:gravity="center_vertical"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toBottomOf="@+id/gdg_image"
+                app:layout_constraintTop_toTopOf="@+id/gdg_image"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

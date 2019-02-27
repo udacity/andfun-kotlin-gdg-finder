@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.example.android.gdgfinder.search.GdgListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 tools:context="com.example.android.gdg.MainActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/regions_list"
+                android:layout_width="395dp"
+                android:layout_height="94dp" android:layout_marginTop="28dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                tools:listitem="@layout/region"
+                app:regionData="@{viewModel.regionList}"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gdg_chapter_list"
+                android:layout_width="395dp"
+                android:layout_height="501dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/regions_list" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                tools:listitem="@layout/list_item"
+                app:listData="@{viewModel.gdgList}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+
+        <!--tools:listitem="@layout/list_item"-->
+        <!--app:listData="@{viewModel.gdgList}"-->
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--android:layout_width="395dp"-->
+<!--android:layout_height="94dp" android:layout_marginTop="28dp"-->
+<!--app:layout_constraintTop_toTopOf="parent" android:id="@+id/regions"-->
+<!--app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"-->
+<!--app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"-->
+<!--android:orientation="horizontal" />-->
+
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--android:layout_width="395dp"-->
+<!--android:layout_height="501dp" android:layout_marginTop="8dp"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/regions" android:layout_marginBottom="8dp"-->
+<!--app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"-->
+<!--android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"-->
+<!--android:layout_marginStart="8dp"-->
+<!--android:id="@+id/gdgList"/>-->

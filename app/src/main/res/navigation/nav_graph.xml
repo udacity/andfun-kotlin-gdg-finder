@@ -6,7 +6,7 @@
 
     <fragment
             android:id="@+id/gdgListFragment"
-            android:name="com.example.android.gdg.gdglist.GdgListFragment"
+            android:name="com.example.android.gdgfinder.search.GdgListFragment"
             android:label="fragment_overview"
             tools:layout="@layout/fragment_gdg_list" >
     </fragment>

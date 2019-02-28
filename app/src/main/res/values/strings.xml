@@ -4,4 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_gdg">Couldn\'t find a GDG in your region? Great, go ahead ans start one. Fill the form below and expect to hear from us shortly!</string>
+    <string name="application_submitted">Got your application request!! Oh well, not really. This is a dummy form just
+        for educational purposes. If you really want to submit your application please visit the website!
+    </string>
 </resources>

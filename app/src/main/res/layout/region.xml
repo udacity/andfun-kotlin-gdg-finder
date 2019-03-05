@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
 >
 
     <data>
-        <variable
-                name="region"
-                type="String" />
+        <variable name="region" type="String" />
+        <variable name="selected" type="Boolean"/>
+
         <variable
                 name="clickListener"
                 type="com.example.android.gdgfinder.search.RegionClickListener" />
     </data>
-<TextView
-          android:id="@+id/text"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@{region}"
-          android:padding="8dp"
-          android:onClick="@{() -> clickListener.onClick(region)}"/>
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:minWidth="100dp"
+            android:layout_margin="8dp"
+            android:layout_height="match_parent"
+            app:selected="@{selected}"
+            app:cardBackgroundColor="@color/selected_highlight"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="@{() -> clickListener.onClick(region)}"
+    >
+        <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@{region}"
+                android:layout_gravity="center"
+                tools:text="North America"/>
+    </androidx.cardview.widget.CardView>
 
 </layout>

@@ -1,10 +1,13 @@
 package com.example.android.gdgfinder
 
+import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.gdgfinder.search.GdgListAdapter
 import com.example.android.gdgfinder.search.RegionListAdapter
 import com.example.android.gdgfinder.network.GdgChapter
+import com.example.android.gdgfinder.search.FiltersWithSelected
+import com.google.android.material.card.MaterialCardView
 
 /**
  * When there is no Mars property data (data is null), hide the [RecyclerView], otherwise show it.
@@ -18,7 +21,12 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<GdgChapter>?) {
     }
 }
 @BindingAdapter("regionData")
-fun bindRegionsToRecyclerView(recyclerView: RecyclerView, data: List<String>?) {
+fun bindRegionsToRecyclerView(recyclerView: RecyclerView, data: List<FiltersWithSelected>?) {
     val adapter = recyclerView.adapter as RegionListAdapter
     adapter.submitList(data)
+}
+
+@BindingAdapter("selected")
+fun CardView.bindSelected(isSelected: Boolean) {
+    setSelected(isSelected)
 }

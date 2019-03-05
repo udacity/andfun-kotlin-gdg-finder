@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.gdgfinder.databinding.RegionBinding
 import com.example.android.gdgfinder.search.RegionListAdapter.RegionViewHolder
 
-class RegionListAdapter(val clickListener: RegionClickListener) : ListAdapter<String, RegionViewHolder>(DiffCallback){
+class RegionListAdapter(val clickListener: RegionClickListener) : ListAdapter<FiltersWithSelected, RegionViewHolder>(DiffCallback){
 
-    companion object DiffCallback : DiffUtil.ItemCallback<String>() {
-        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
-            return oldItem === newItem
+    companion object DiffCallback : DiffUtil.ItemCallback<FiltersWithSelected>() {
+        override fun areItemsTheSame(oldItem: FiltersWithSelected, newItem: FiltersWithSelected): Boolean {
+            return oldItem.region  === newItem.region
         }
 
-        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+        override fun areContentsTheSame(oldItem: FiltersWithSelected, newItem: FiltersWithSelected): Boolean {
             return oldItem == newItem
         }
     }
@@ -24,8 +24,9 @@ class RegionListAdapter(val clickListener: RegionClickListener) : ListAdapter<St
 
     class RegionViewHolder(private var binding: RegionBinding):
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(listener: RegionClickListener, region: String) {
-            binding.region = region
+        fun bind(listener: RegionClickListener, region: FiltersWithSelected) {
+            binding.region = region.region
+            binding.selected = region.selected
             binding.clickListener = listener
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements efficently

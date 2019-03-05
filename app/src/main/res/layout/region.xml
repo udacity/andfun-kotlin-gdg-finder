@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="@{region}"
+                android:textColor="@color/selected_invert_text"
                 android:layout_gravity="center"
                 tools:text="North America"/>
     </androidx.cardview.widget.CardView>

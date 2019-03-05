@@ -57,6 +57,8 @@ dependencies {
 
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
+    // use viewModelScope from lifecycle-viewmodel-ktx
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-alpha02"
 
     // Navigation
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
@@ -64,9 +66,6 @@ dependencies {
 
     // Core with Ktx
     implementation "androidx.core:core-ktx:$version_core"
-
-    // RecyclerView
-    implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
 
     // Moshi
     implementation "com.squareup.moshi:moshi:$version_moshi"
@@ -88,5 +87,8 @@ dependencies {
 
     // RecyclerView
     implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
-    implementation 'com.google.android.material:material:1.0.0-rc02'
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
+
+    // Client for retrieving location
+    implementation "com.google.android.gms:play-services-location:16.0.0"
 }

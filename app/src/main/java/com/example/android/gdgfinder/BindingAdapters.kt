@@ -12,7 +12,9 @@ import com.example.android.gdgfinder.network.GdgChapter
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<GdgChapter>?) {
     val adapter = recyclerView.adapter as GdgListAdapter
-    adapter.submitList(data)
+    adapter.submitList(data) {
+        recyclerView.scrollToPosition(0)
+    }
 }
 @BindingAdapter("regionData")
 fun bindRegionsToRecyclerView(recyclerView: RecyclerView, data: List<String>?) {

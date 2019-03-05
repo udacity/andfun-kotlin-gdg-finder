@@ -12,9 +12,16 @@ data class GdgChapter(
     @Json(name = "cityarea") val city: String,
     val country: String,
     val region: String,
-    val website: String
-    //TODO geo??
+    val website: String,
+    val geo: LatLong
  ): Parcelable
+
+@Parcelize
+data class LatLong(
+    val lat: Double,
+    @Json(name = "lng")
+    val long: Double
+) : Parcelable
 
 @Parcelize
 data class GdgResponse(

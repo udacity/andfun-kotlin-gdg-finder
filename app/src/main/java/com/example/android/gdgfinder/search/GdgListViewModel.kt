@@ -1,18 +1,25 @@
 package com.example.android.gdgfinder.search
 
+import android.location.Location
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android.gdgfinder.network.GdgChapter
+import androidx.lifecycle.viewModelScope
 import com.example.android.gdgfinder.network.GdgApi
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.example.android.gdgfinder.network.GdgChapter
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 
-class GdgListViewModel: ViewModel(){
+class GdgListViewModel: ViewModel() {
 
+    private val repository = GdgChapterRepository(GdgApi.retrofitService)
+
+    private var currentLocation: Location? = null
+    private var currentFilter: String? = null
+
+    private var currentJob: Job? = null
 
     //private val _filteredList = MutableLiveData<List<GdgChapter>>()
     private val _gdgList = MutableLiveData<List<GdgChapter>>()
@@ -25,40 +32,37 @@ class GdgListViewModel: ViewModel(){
     val regionList: LiveData<List<String>>
         get() = _regionList
 
-    // Create a Coroutine scope using a job to be able to cancel when needed
-    private var viewModelJob = Job()
-
-    // the Coroutine runs using the Main (UI) dispatcher
-    private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-
     init {
-       // _filteredList.value= listOf()
-        getGdgChapterList()
+        // process the initial filter
+        onQueryChanged()
     }
 
-    private fun getGdgChapterList() {
-        coroutineScope.launch {
+    private fun onQueryChanged() {
+        currentJob?.cancel() // if a previous query is running cancel it before starting another
+        currentJob = viewModelScope.launch {
             try {
                 // this will run on a thread managed by Retrofit
-                val result = GdgApi.retrofitService.getChapters().await()
-                _regionList.value = result.filters.regions
-                _gdgList.value = result.chapters//.map { it.region to listOf(it) }.toMap()
-
-               // filterList(result.filters.regions)
-
-            } catch (e: Exception) {
+                val updatedValues = repository.getGdgInformationByLocation(currentFilter, currentLocation)
+                _regionList.value = updatedValues.filters
+                _gdgList.value = updatedValues.chapters
+            } catch (e: IOException) {
                 _gdgList.value = listOf()
             }
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
+    fun onLocationUpdated(location: Location) {
+        currentLocation = location
+        onQueryChanged()
     }
 
-    fun onRegionSelected(region: String) {
-
+    fun onFilterChanged(filter: String) {
+        if (currentFilter == filter) {
+            currentFilter = null
+        } else {
+            currentFilter = filter
+        }
+        onQueryChanged()
     }
 }
 

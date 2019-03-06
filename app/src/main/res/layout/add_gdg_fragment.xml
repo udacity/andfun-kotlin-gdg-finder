@@ -120,7 +120,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion" android:layout_marginBottom="1dp"
                     app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"
                     app:layout_constraintStart_toStartOf="parent"
-                  
+                    android:contentDescription="@string/motivation"
             />
 
             <EditText
@@ -137,7 +137,7 @@
                     android:layout_marginEnd="32dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginBottom="8dp"
-
+                    android:hint="@string/enter_motivation"
             />
 
             <!--</LinearLayout>-->

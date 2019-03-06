@@ -31,4 +31,5 @@
     <string name="city_label">city</string>
     <string name="country_label">country</string>
     <string name="region_label">region</string>
+    <string name="enter_motivation">Please enter your motivation in 1-2 sentences</string>
 </resources>

@@ -39,7 +39,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginBottom="2dp"
                     app:layout_constraintBottom_toTopOf="@+id/EditTextName" android:scaleType="centerCrop"
-                    android:contentDescription="@string/stage_image_description"/>
+                    android:contentDescription="@string/stage_image_description"
+            />
 
 
             <EditText

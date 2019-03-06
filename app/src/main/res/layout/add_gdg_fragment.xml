@@ -138,7 +138,7 @@
             <!---->
 
             <Button
-                    android:text="Ok"
+                    android:text="Submit"
                     android:layout_width="40dp"
                     android:layout_height="24dp"
                     android:background="@color/green"

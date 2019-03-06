@@ -32,4 +32,6 @@
     <string name="country_label">country</string>
     <string name="region_label">region</string>
     <string name="enter_motivation">Please enter your motivation in 1-2 sentences</string>
+    <string name="submitted">Submitted, no need to submit again</string>
+    <string name="done">Done</string>
 </resources>

@@ -10,7 +10,7 @@
                 name="viewModel"
                 type="com.example.android.gdgfinder.add.AddGdgViewModel" />
     </data>
-
+    <ScrollView android:layout_height="match_parent" android:layout_width="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,111 +19,158 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/add_gdg" app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/add_gdg"
+                android:contentDescription="@string/add_gdg"
+                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="16dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
                 android:id="@+id/textView9"/>
         <Button
                 android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button" android:layout_marginBottom="24dp"
+                android:layout_width="62dp"
+                android:layout_height="28dp"
+                android:id="@+id/button" android:layout_marginBottom="12dp"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="40dp"
-                android:onClick="@{() -> viewModel.onSubmitApplication()}"/>
+                android:contentDescription="@string/submit_button_description"
+                android:onClick="@{() -> viewModel.onSubmitApplication()}"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextWhy"/>
+        <!--Live region + make touch targets larger-->
+        
         <ImageView
                 android:layout_width="411dp"
-                android:layout_height="230dp" tools:src="@tools:sample/avatars"
+                android:layout_height="230dp"
+                tools:src="@tools:sample/avatars"
+                app:srcCompat="@drawable/behind"
                 android:id="@+id/imageView"
-                android:layout_marginTop="5dp" app:layout_constraintTop_toBottomOf="@+id/textView9"
-                tools:srcCompat="@drawable/behind" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="15dp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout" android:scaleType="centerCrop"/>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="395dp"
-                android:layout_height="273dp"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/button"
-                android:id="@+id/linearLayout">
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" android:padding="5dp">
-                <TextView
-                        android:text="Your Name"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewName"/>
-                <TextView
-                        android:text="e-mail"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewEmail"/>
-                <TextView
-                        android:text="City"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewCity"/>
-                <TextView
-                        android:text="Country"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewCountry"/>
-                <TextView
-                        android:text="Region"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewRegion"/>
-                <TextView
-                        android:text="Website"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewWebsite"/>
-                <TextView
-                        android:text="Why you want to start a GDG?"
-                        android:layout_width="80dp" android:layout_marginTop="22dp"
-                        android:layout_height="wrap_content" android:id="@+id/textViewWhy"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:padding="5dp">
+                android:layout_marginBottom="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/EditTextName" android:scaleType="centerCrop"
+                android:contentDescription="@string/stage_image_description"/>
 
-                <EditText
-                        android:id="@+id/EditTextName"
-                        android:layout_height="wrap_content"
-                        android:layout_width="fill_parent">
-                </EditText>
-                <EditText
-                        android:id="@+id/EditTextEmail"
-                        android:layout_height="wrap_content"
-                        android:layout_width="fill_parent">
-                </EditText>
-                <EditText
-                        android:id="@+id/EditTextCity"
-                        android:layout_height="wrap_content"
-                        android:layout_width="fill_parent">
-                </EditText>
-                <EditText
-                        android:id="@+id/EditTextCountry"
-                        android:layout_height="wrap_content"
-                        android:layout_width="fill_parent">
-                </EditText>
-                <EditText
-                        android:id="@+id/EditTextRegion"
-                        android:layout_height="wrap_content"
-                        android:layout_width="fill_parent">
-                </EditText>
-                <EditText
-                        android:id="@+id/EditTextWebsite"
-                        android:layout_height="wrap_content"
-                        android:layout_width="fill_parent">
-                </EditText>
-                <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:ems="10"
-                        android:id="@+id/EditTextWhy" android:layout_marginTop="12dp"/>
-            </LinearLayout>
-        </LinearLayout>
+
+        <EditText
+                android:id="@+id/EditTextName"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp" android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/EditTextEmail" android:singleLine="true"
+                android:hint="@string/your_name_label">
+        </EditText>
+        <EditText
+                android:id="@+id/EditTextEmail"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextName" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp" android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/EditTextCity" android:singleLine="true"
+                android:hint="@string/email_label">
+        </EditText>
+        <EditText
+                android:id="@+id/EditTextCity"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextEmail" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp" app:layout_constraintBottom_toTopOf="@+id/EditTextCountry"
+                android:layout_marginBottom="4dp" android:singleLine="true"
+                android:hint="@string/city_label">
+        </EditText>
+        <EditText
+                android:id="@+id/EditTextCountry"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent" app:layout_constraintTop_toBottomOf="@+id/EditTextCity"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp" app:layout_constraintBottom_toTopOf="@+id/EditTextRegion"
+                android:layout_marginTop="4dp" android:singleLine="true"
+                android:hint="@string/country_label">
+        </EditText>
+        <EditText
+                android:id="@+id/EditTextRegion"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextCountry"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp" app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"
+                android:singleLine="true"
+                android:hint="@string/region_label">
+        </EditText>
+        <!--wrap in a layout to group-->
+        <!--<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:focusable="true">-->
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/EditTextWhy"
+                android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/EditTextRegion"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/button"/>
+        <TextView
+                android:text="@string/motivation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelTextWhy" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextRegion" android:layout_marginBottom="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/EditTextWhy" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="32dp"/>
+        <!--</LinearLayout>-->
+        <!---->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </layout>
+
+
+<!--<LinearLayout-->
+<!--android:orientation="vertical"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="match_parent" android:padding="5dp">-->
+<!--<TextView-->
+        <!--android:text="Your Name"-->
+        <!--android:contentDescription="@string/form_name_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewName"/>-->
+<!--<TextView-->
+        <!--android:text="e-mail"-->
+        <!--android:contentDescription="@string/form_email_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewEmail"/>-->
+<!--<TextView-->
+        <!--android:text="City"-->
+        <!--android:contentDescription="@string/form_city_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewCity"/>-->
+<!--<TextView-->
+        <!--android:text="Country"-->
+        <!--android:contentDescription="@string/form_country_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewCountry"/>-->
+<!--<TextView-->
+        <!--android:text="Region"-->
+        <!--android:contentDescription="@string/form_region_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewRegion"/>-->
+<!--<TextView-->
+        <!--android:text="Website"-->
+        <!--android:contentDescription="@string/form_website_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewWebsite"/>-->
+<!--<TextView-->
+        <!--android:text="Why you want to start a GDG?"-->
+        <!--android:contentDescription="@string/form_motivation_description"-->
+        <!--android:layout_width="80dp" android:layout_marginTop="22dp"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/textViewWhy"/>-->
+<!--</LinearLayout>-->

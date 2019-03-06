@@ -22,4 +22,13 @@
         tools, as well as what local companies and developers are doing with these technologies Focused on developers
         and educational technical content Open to and free for all interested
     </string>
+    <string name="stage_image_description">Photo from stage from a devfest</string>
+    <string name="submit_button_description">Button to submit form</string>
+    <string name="form_name_description">enter your name</string>
+    <string name="motivation">Tell us a bit more about why do you want to start a GDG</string>
+    <string name="your_name_label">Your name</string>
+    <string name="email_label">e-mail</string>
+    <string name="city_label">city</string>
+    <string name="country_label">country</string>
+    <string name="region_label">region</string>
 </resources>

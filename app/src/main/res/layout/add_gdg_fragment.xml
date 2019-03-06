@@ -103,13 +103,13 @@
                 <!--app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"-->
             </EditText>
             <!--wrap in a layout to group-->
-            <!--<LinearLayout android:id="@+id/contentGroup" android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" android:focusable="true"-->
-            <!--app:layout_constraintTop_toBottomOf="@id/EditTextRegion"-->
-            <!--android:orientation="vertical" app:layout_constraintStart_toStartOf="@+id/EditTextRegion"-->
-            <!--app:layout_constraintEnd_toEndOf="@+id/EditTextRegion"-->
-            <!--android:layout_marginTop="16dp" app:layout_constraintBottom_toTopOf="@+id/button"-->
-            <!--android:layout_marginBottom="8dp">-->
+            <LinearLayout android:id="@+id/contentGroup" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/EditTextRegion"
+            android:orientation="vertical" app:layout_constraintStart_toStartOf="@+id/EditTextRegion"
+            app:layout_constraintEnd_toEndOf="@+id/EditTextRegion"
+            android:layout_marginTop="16dp" app:layout_constraintBottom_toTopOf="@+id/button"
+            android:layout_marginBottom="8dp">
             <TextView
                     android:text="@string/motivation"
                     android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
                     android:hint="@string/enter_motivation"
             />
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
             <!---->
 
             <Button

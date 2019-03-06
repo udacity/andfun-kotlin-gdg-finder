@@ -63,6 +63,7 @@
                     android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="32dp" android:layout_marginBottom="4dp"
                     app:layout_constraintBottom_toTopOf="@+id/EditTextCity" android:singleLine="true"
+                    android:hint="@string/email_label"
                     >
             </EditText>
             <EditText
@@ -73,6 +74,7 @@
                     android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="32dp" app:layout_constraintBottom_toTopOf="@+id/EditTextCountry"
                     android:layout_marginBottom="4dp" android:singleLine="true"
+                    android:hint="@string/city_label"
                     >
             </EditText>
             <EditText
@@ -83,6 +85,7 @@
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
                     android:layout_marginBottom="4dp" app:layout_constraintBottom_toTopOf="@+id/EditTextRegion"
                     android:layout_marginTop="4dp" android:singleLine="true"
+                    android:hint="@string/country_label"
                     >
             </EditText>
             <EditText
@@ -94,6 +97,7 @@
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
                     android:layout_marginBottom="4dp" app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"
                     android:singleLine="true"
+                    android:hint="@string/region_label"
                     >
                 <!--android:hint="@string/region_label"-->
                 <!--app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"-->
@@ -116,6 +120,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion" android:layout_marginBottom="1dp"
                     app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"
                     app:layout_constraintStart_toStartOf="parent"
+                  
             />
 
             <EditText
@@ -132,6 +137,7 @@
                     android:layout_marginEnd="32dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginBottom="8dp"
+
             />
 
             <!--</LinearLayout>-->

@@ -2,16 +2,18 @@ package com.example.android.gdgfinder.search
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.android.gdgfinder.databinding.FragmentGdgListBinding
 import com.google.android.gms.location.*
-
+import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
+import com.example.android.gdgfinder.R
 
 private const val LOCATION_PERMISSION_REQUEST = 1
 
@@ -43,13 +45,31 @@ class GdgListFragment : Fragment() {
                 Snackbar.LENGTH_SHORT // How long to display the message.
             ).show()
         })
-        val adapterRegion = RegionListAdapter(RegionClickListener {
-                region ->  viewModel.onFilterChanged(region)
-        })
 
         // Sets the adapter of the RecyclerView
         binding.gdgChapterList.adapter = adapter
-        binding.regionsList.adapter = adapterRegion
+
+        viewModel.regionList.observe(viewLifecycleOwner, object: Observer<List<String>> {
+            override fun onChanged(data: List<String>?) {
+                data ?: return
+                viewModel.regionList.removeObserver(this)
+                val inflator = LayoutInflater.from(context)
+                val chipGroup = binding.regionsList
+                val children = data.map { item ->
+                    val localViewModel = viewModel
+                    val chip = (inflator.inflate(R.layout.region, chipGroup, false) as Chip).apply {
+                        text = item
+                        setOnCheckedChangeListener { button, isChecked ->
+                            localViewModel.onFilterChanged(item, isChecked)
+                        }
+                    }
+                    chip
+                }
+                chipGroup.removeAllViews()
+                children.map { chipGroup.addView(it) }
+            }
+
+        })
 
         setHasOptionsMenu(true)
         return binding.root

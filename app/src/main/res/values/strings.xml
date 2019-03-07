@@ -16,10 +16,10 @@
         and tech talks, to hackathons. Google Developers supports and recognizes GDG chapters, but doesn’t own or manage
         them.
     </string>
-    <string name="about_google_developer_groups">About Google developer Groups</string>
-    <string name="gdg_description_bullets">️Run by passionate individuals in local developer communities ️A group to
-        share ideas and network with fellow developers ️A place to learn about Google technologies and development
-        tools, as well as what local companies and developers are doing with these technologies Focused on developers
-        and educational technical content Open to and free for all interested
+    <string name="about_google_developer_groups">About Google Developer Groups</string>
+    <string name="gdg_description_bullets">️Run by passionate individuals in local developer communities\n
+        ️A group to share ideas and network with fellow developers \n
+        ️A place to learn about Google technologies and development tools \n
+        Open to and free for all interested
     </string>
 </resources>

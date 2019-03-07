@@ -1,13 +1,12 @@
 package com.example.android.gdgfinder
 
+import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.gdgfinder.search.GdgListAdapter
-import com.example.android.gdgfinder.search.RegionListAdapter
 import com.example.android.gdgfinder.network.GdgChapter
-import com.example.android.gdgfinder.search.FiltersWithSelected
-import com.google.android.material.card.MaterialCardView
+import com.example.android.gdgfinder.search.GdgListAdapter
+import com.google.android.material.chip.ChipGroup
 
 /**
  * When there is no Mars property data (data is null), hide the [RecyclerView], otherwise show it.
@@ -19,14 +18,4 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<GdgChapter>?) {
         // scroll the list to the top after the diffs are calculated and posted
         recyclerView.scrollToPosition(0)
     }
-}
-@BindingAdapter("regionData")
-fun bindRegionsToRecyclerView(recyclerView: RecyclerView, data: List<FiltersWithSelected>?) {
-    val adapter = recyclerView.adapter as RegionListAdapter
-    adapter.submitList(data)
-}
-
-@BindingAdapter("selected")
-fun CardView.bindSelected(isSelected: Boolean) {
-    setSelected(isSelected)
 }

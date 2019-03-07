@@ -20,13 +20,13 @@ class GdgListViewModel: ViewModel() {
 
     //private val _filteredList = MutableLiveData<List<GdgChapter>>()
     private val _gdgList = MutableLiveData<List<GdgChapter>>()
-    private val _regionList = MutableLiveData<List<FiltersWithSelected>>()
+    private val _regionList = MutableLiveData<List<String>>()
 
     // The external LiveData interface to the property is immutable, so only this class can modify
     val gdgList: LiveData< List<GdgChapter>>
         get() = _gdgList
 
-    val regionList: LiveData<List<FiltersWithSelected>>
+    val regionList: LiveData<List<String>>
         get() = _regionList
 
     init {
@@ -40,7 +40,7 @@ class GdgListViewModel: ViewModel() {
             try {
                 // this will run on a thread managed by Retrofit
                 val updatedValues = repository.getGdgInformationByLocation(currentFilter, currentLocation)
-                _regionList.value = updatedValues.filters.map { FiltersWithSelected(it, it == currentFilter)}
+                _regionList.value = updatedValues.filters
                 _gdgList.value = updatedValues.chapters
             } catch (e: IOException) {
                 _gdgList.value = listOf()
@@ -53,15 +53,13 @@ class GdgListViewModel: ViewModel() {
         onQueryChanged()
     }
 
-    fun onFilterChanged(filter: String) {
-        if (currentFilter == filter) {
+    fun onFilterChanged(filter: String, isChecked: Boolean) {
+        if (currentFilter == filter && !isChecked) {
             currentFilter = null
-        } else {
+        } else if (isChecked) {
             currentFilter = filter
         }
         onQueryChanged()
     }
 }
-
-data class FiltersWithSelected(val region: String, val selected: Boolean)
 

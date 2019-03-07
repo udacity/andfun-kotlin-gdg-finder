@@ -15,18 +15,24 @@
             android:layout_height="match_parent"
             tools:context="com.example.android.gdg.MainActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/regions_list"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+        <HorizontalScrollView
+                android:id="@+id/chips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/list_divider"
-                tools:listitem="@layout/region"
-                app:regionData="@{viewModel.regionList}"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                app:layout_constraintHorizontal_bias="0"
+        >
+            <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/regions_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:singleSelection="true"
+                    app:singleLine="true"
+                    android:layout_margin="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/gdg_chapter_list"
@@ -36,19 +42,13 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                app:layout_constraintTop_toTopOf="@+id/list_divider"
+                app:layout_constraintTop_toBottomOf="@+id/chips"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:listitem="@layout/list_item"
                 app:listData="@{viewModel.gdgList}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-        <androidx.constraintlayout.widget.Guideline
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/list_divider"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="100dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

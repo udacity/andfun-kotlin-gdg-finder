@@ -35,6 +35,10 @@ class GdgListViewModel: ViewModel() {
     }
 
     private fun onQueryChanged() {
+        if (currentLocation == null) {
+            // don't do anything until the user gives us their location
+            return
+        }
         currentJob?.cancel() // if a previous query is running cancel it before starting another
         currentJob = viewModelScope.launch {
             try {

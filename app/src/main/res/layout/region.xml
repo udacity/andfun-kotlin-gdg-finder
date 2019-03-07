@@ -10,5 +10,4 @@
         app:iconStartPadding="8dp"
         app:checkedIcon="@drawable/ic_gdg"
         app:checkedIconVisible="true"
-        android:layout_marginEnd="8dp"
 />

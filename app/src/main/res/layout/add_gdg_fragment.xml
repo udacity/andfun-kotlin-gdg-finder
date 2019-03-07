@@ -139,8 +139,8 @@
 
             <Button
                     android:text="Submit"
-                    android:layout_width="40dp"
-                    android:layout_height="24dp"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
                     android:background="@color/green"
                     android:textColor="@color/red"
                     android:id="@+id/button" android:layout_marginBottom="12dp"

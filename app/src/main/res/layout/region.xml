@@ -8,6 +8,5 @@
         android:layout_height="wrap_content"
         tools:text="North America"
         app:iconStartPadding="8dp"
-        app:checkedIcon="@drawable/ic_gdg"
         app:checkedIconVisible="true"
 />

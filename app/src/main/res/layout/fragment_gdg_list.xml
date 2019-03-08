@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     app:singleSelection="true"
                     app:singleLine="true"
-                    android:padding="16dp"
+                    android:padding="@dimen/grid16"
                     app:chipSpacing="8dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
         </HorizontalScrollView>

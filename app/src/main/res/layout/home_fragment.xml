@@ -13,7 +13,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
+                    android:paddingBottom="@dimen/grid16"
                     android:clipToPadding="true"
                     tools:context=".home.HomeFragment">
 
@@ -34,18 +34,18 @@
                         android:layout_height="wrap_content"
                         android:text="@string/about_google_developer_groups"
                         android:textAppearance="?textAppearanceHeadline5"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="@dimen/grid16"
                         app:layout_constraintTop_toBottomOf="@id/image"
-                        app:layout_constraintEnd_toStartOf="@+id/end_well"
-                        app:layout_constraintStart_toStartOf="@+id/start_well"/>
+                        app:layout_constraintEnd_toStartOf="@+id/end_grid"
+                        app:layout_constraintStart_toStartOf="@+id/start_grid"/>
 
                 <TextView
                         android:id="@+id/intro_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         app:layout_constraintTop_toBottomOf="@id/title"
-                        app:layout_constraintStart_toStartOf="@+id/start_well"
-                        app:layout_constraintEnd_toStartOf="@+id/end_well"
+                        app:layout_constraintStart_toStartOf="@+id/start_grid"
+                        app:layout_constraintEnd_toStartOf="@+id/end_grid"
                         android:text="@string/gdg_description_long"
                         android:layout_marginTop="8dp"
                 />
@@ -56,8 +56,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/gdgs_are"
                         android:textAppearance="?textAppearanceHeadline6"
-                        app:layout_constraintStart_toEndOf="@id/start_well"
-                        app:layout_constraintEnd_toStartOf="@id/end_well"
+                        app:layout_constraintStart_toEndOf="@id/start_grid"
+                        app:layout_constraintEnd_toStartOf="@id/end_grid"
                         android:layout_marginTop="13dp"
                         app:layout_constraintTop_toBottomOf="@+id/intro_text"/>
                 <TextView
@@ -66,8 +66,8 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintTop_toBottomOf="@id/subtitle"
                         android:text="@string/gdg_description_bullets"
-                        app:layout_constraintStart_toStartOf="@+id/start_well"
-                        app:layout_constraintEnd_toStartOf="@+id/end_well"
+                        app:layout_constraintStart_toStartOf="@+id/start_grid"
+                        app:layout_constraintEnd_toStartOf="@+id/end_grid"
                         android:layout_marginTop="8dp"/>
 
                 <ImageView
@@ -76,7 +76,7 @@
                         android:layout_height="0dp"
                         app:srcCompat="@drawable/wtm"
                         android:scaleType="centerCrop"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="@dimen/grid16"
                         app:layout_constraintTop_toBottomOf="@id/description"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -84,17 +84,17 @@
                         app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/start_grid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/start_well"
-                        app:layout_constraintGuide_begin="16dp"
+                        app:layout_constraintGuide_begin="@dimen/grid16"
                         android:orientation="vertical"/>
                 <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/end_well"
+                        android:id="@+id/end_grid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        app:layout_constraintGuide_end="16dp"/>
+                        app:layout_constraintGuide_end="@dimen/grid16"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/grid16"
                 app:srcCompat="@drawable/ic_gdg"
                 android:onClick="@{() -> viewModel.onFabClicked()}"
         />

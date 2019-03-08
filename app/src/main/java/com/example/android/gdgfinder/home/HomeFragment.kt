@@ -29,13 +29,11 @@ class HomeFragment : Fragment() {
         binding.viewModel = viewModel
 
         viewModel.navigateToSearch.observe(viewLifecycleOwner,
-            Observer<NavigateToSearch> { navigate ->
-                when (navigate) {
-                    NavigateToSearch -> {
-                        val navController = binding.root.findNavController()
-                        navController.navigate(R.id.action_homeFragment_to_gdgListFragment)
-                        viewModel.onNavigatedToSearch()
-                    }
+            Observer<Boolean> { shouldNavigate ->
+                if (shouldNavigate == true) {
+                    val navController = binding.root.findNavController()
+                    navController.navigate(R.id.action_homeFragment_to_gdgListFragment)
+                    viewModel.onNavigatedToSearch()
                 }
             })
         return binding.root

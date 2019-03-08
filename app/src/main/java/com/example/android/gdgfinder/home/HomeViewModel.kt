@@ -5,17 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel;
 
 class HomeViewModel : ViewModel() {
-    private val _navigateToSearch = MutableLiveData<NavigateToSearch>()
-    val navigateToSearch: LiveData<NavigateToSearch>
+    private val _navigateToSearch = MutableLiveData<Boolean>()
+    val navigateToSearch: LiveData<Boolean>
         get() = _navigateToSearch
 
     fun onFabClicked() {
-        _navigateToSearch.value = NavigateToSearch
+        _navigateToSearch.value = true
     }
 
     fun onNavigatedToSearch() {
-        _navigateToSearch.value = null
+        _navigateToSearch.value = false
     }
 }
-
-object NavigateToSearch

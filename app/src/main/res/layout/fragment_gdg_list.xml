@@ -31,8 +31,7 @@
                     app:singleSelection="true"
                     app:singleLine="true"
                     android:padding="@dimen/grid16"
-                    app:chipSpacing="8dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                    app:chipSpacing="8dp" />
         </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView

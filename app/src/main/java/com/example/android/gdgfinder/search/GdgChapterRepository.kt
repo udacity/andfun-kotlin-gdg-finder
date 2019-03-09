@@ -13,7 +13,19 @@ import kotlinx.coroutines.withContext
 
 class GdgChapterRepository(gdgApiService: GdgApiService) {
 
+    /**
+     * A single network request, the results won't change. For this lesson we did not add an offline cache for simplicity
+     * and the result will be cached in memory.
+     */
     private val request = gdgApiService.getChapters()
+
+    /**
+     * An in-progress (or potentially completed) sort, this may be null or cancelled at any time.
+     *
+     * If this is non-null, calling await will get the result of the last sorting request.
+     *
+     * This will be cancelled whenever location changes, as the old results are no longer valid.
+     */
     private var inProgressSort: Deferred<SortedData>? = null
 
     var isFullyInitialized = false
@@ -24,9 +36,12 @@ class GdgChapterRepository(gdgApiService: GdgApiService) {
      * Get the chapters list for a specified filter.
      *
      * This will be cancel if a new location is sent before the result is available.
+     *
+     * This works by first waiting for any previously in-progress sorts, and if a sort has not yet started
+     * it will start a new sort (which may happen if location is disabled on the device)
      */
     suspend fun getChaptersForFilter(filter: String?): List<GdgChapter> {
-        val data = completedData()
+        val data = sortedData()
         return when(filter) {
             null -> data.chapters
             else -> data.chaptersByRegion.getOrElse(filter) { emptyList() }
@@ -37,13 +52,18 @@ class GdgChapterRepository(gdgApiService: GdgApiService) {
      * Get the filters sorted by distance from the last location.
      *
      * This will cancel if a new location is sent before the result is available.
+     *
+     * This works by first waiting for any previously in-progress sorts, and if a sort has not yet started
+     * it will start a new sort (which may happen if location is disabled on the device)
      */
-    suspend fun getFilters(): List<String> = completedData().filters
+    suspend fun getFilters(): List<String> = sortedData().filters
 
     /**
-     * Get the cached sorted data, the next computed sorted data, or finally start a new sort.
+     * Get the computed sorted data after it completes, or start a new sort if none are running.
+     *
+     * This will always cancel if the location changes while the sort is in progress.
      */
-    private suspend fun completedData(): SortedData = withContext(Dispatchers.Main) {
+    private suspend fun sortedData(): SortedData = withContext(Dispatchers.Main) {
         // We need to ensure we're on Dispatchers.Main so that this is not running on multiple Dispatchers and we
         // modify the member inProgressSort.
 
@@ -58,6 +78,14 @@ class GdgChapterRepository(gdgApiService: GdgApiService) {
 
     /**
      * Call this to force a new sort to start.
+     *
+     * This will start a new coroutine to perform the sort. Future requests to sorted data can use the deferred in
+     * [inProgressSort] to get the result of the last sort without sorting the data again. This guards against multiple
+     * sorts being performed on the same data, which is inefficient.
+     *
+     * This will always cancel if the location changes while the sort is in progress.
+     *
+     * @return the result of the started sort
      */
     private suspend fun doSortData(location: Location? = null): SortedData {
         // since we'll need to launch a new coroutine for the sorting use coroutineScope.
@@ -78,6 +106,8 @@ class GdgChapterRepository(gdgApiService: GdgApiService) {
      * Call when location changes.
      *
      * This will cancel any previous queries, so it's important to re-request the data after calling this function.
+     *
+     * @param location the location to sort by
      */
     suspend fun onLocationChanged(location: Location) {
         // We need to ensure we're on Dispatchers.Main so that this is not running on multiple Dispatchers and we
@@ -108,6 +138,12 @@ class GdgChapterRepository(gdgApiService: GdgApiService) {
     ) {
 
         companion object {
+            /**
+             * Sort the data from a [GdgResponse] by the specified location.
+             *
+             * @param response the response to sort
+             * @param location the location to sort by, if null the data will not be sorted.
+             */
             suspend fun from(response: GdgResponse, location: Location?): SortedData {
                 return withContext(Dispatchers.Default) {
                     // this sorting is too expensive to do on the main thread, so do thread confinement here.

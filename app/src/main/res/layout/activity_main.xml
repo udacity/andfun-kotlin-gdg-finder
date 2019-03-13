@@ -12,6 +12,8 @@
 
             <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
+                    android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+                    android:background="?colorPrimaryDark"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize">
                 <ImageView

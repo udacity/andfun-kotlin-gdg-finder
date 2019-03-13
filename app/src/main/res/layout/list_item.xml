@@ -24,7 +24,7 @@
                 android:layout_marginBottom="26dp"
                 android:layout_marginTop="26dp"
                 android:layout_marginStart="16dp"
-                android:contentDescription="TODO"
+                android:contentDescription="TODO" android:autoMirrored="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_gdg" app:layout_constraintBottom_toBottomOf="parent"/>
@@ -37,7 +37,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="@{chapter.name}"
                 app:layout_constraintStart_toEndOf="@+id/gdg_image"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
                 tools:text="GDG Mountain View is really long so it will wrap in tools"
 
                 app:layout_constraintVertical_chainStyle="packed"

@@ -21,6 +21,7 @@
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/logo"
+                        android:tint="?attr/colorOnSecondary"
                         android:contentDescription="@string/app_name"/>
             </androidx.appcompat.widget.Toolbar>
 

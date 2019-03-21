@@ -23,7 +23,7 @@
                 android:layout_height="76dp"
                 android:layout_marginBottom="26dp"
                 android:layout_marginTop="26dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_normal"
                 android:contentDescription="TODO"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -33,8 +33,8 @@
                 android:id="@+id/chapter_name"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
                 android:text="@{chapter.name}"
                 app:layout_constraintStart_toEndOf="@+id/gdg_image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +44,7 @@
                 app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintBottom_toBottomOf="@+id/gdg_image"
                 app:layout_constraintTop_toTopOf="@+id/gdg_image"
+        />
         />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

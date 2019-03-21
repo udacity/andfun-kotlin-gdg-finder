@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     app:singleSelection="true"
                     app:singleLine="true"
-                    android:padding="16dp"
+                    android:padding="@dimen/margin_normal"
                     app:chipSpacing="8dp" />
         </HorizontalScrollView>
 
@@ -66,4 +66,26 @@
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>
+
+
+        <!--tools:listitem="@layout/list_item"-->
+        <!--app:listData="@{viewModel.gdgList}"-->
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--android:layout_width="395dp"-->
+<!--android:layout_height="94dp" android:layout_marginTop="28dp"-->
+<!--app:layout_constraintTop_toTopOf="parent" android:id="@+id/regions"-->
+<!--app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"-->
+<!--app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"-->
+<!--android:orientation="horizontal" />-->
+
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--android:layout_width="395dp"-->
+<!--android:layout_height="501dp" android:layout_marginTop="8dp"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/regions" android:layout_marginBottom="8dp"-->
+<!--app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"-->
+<!--android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"-->
+<!--android:layout_marginStart="8dp"-->
+<!--android:id="@+id/gdgList"/>-->

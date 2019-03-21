@@ -128,7 +128,7 @@ class GdgChapterRepository(gdgApiService: GdgApiService) {
     /**
      * Holds data sorted by the distance from the last location.
      *
-     * Note, by convention this class won't sort on the Main thread. This is not a public API and should
+     * Note, by convention this class won't be instantiated on the Main thread. This is not a public API and should
      * only be called by [doSortData].
      */
     private class SortedData private constructor(

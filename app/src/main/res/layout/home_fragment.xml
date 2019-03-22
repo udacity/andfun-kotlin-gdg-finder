@@ -30,13 +30,12 @@
                     android:id="@+id/title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:textColor="#555555"
+                    style="@style/TextAppearance.Title"
                     android:text="@string/about_google_developer_groups"
                     android:layout_marginTop="16dp"
                     app:layout_constraintTop_toBottomOf="@id/image"
                     app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-                    app:layout_constraintStart_toStartOf="@+id/start_guideline"/>
+                    app:layout_constraintStart_toStartOf="@+id/start_guideline" />
 
             <TextView
                     android:id="@+id/intro_text"
@@ -52,8 +51,7 @@
                     android:id="@+id/subtitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#555555"
+                    style="@style/TextAppearance.Subtitle"
                     android:text="@string/gdgs_are"
                     app:layout_constraintStart_toEndOf="@id/start_guideline"
                     app:layout_constraintEnd_toStartOf="@id/end_guideline"

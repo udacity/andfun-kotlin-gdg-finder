@@ -4,95 +4,109 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
+        <variable name="viewModel" type="com.example.android.gdgfinder.home.HomeViewModel" />
     </data>
-    <ScrollView
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/spacing_normal"
+                    android:clipToPadding="true"
+                    tools:context=".home.HomeFragment">
+
+                <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:srcCompat="@drawable/behind"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="4:3"/>
+
+                <TextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:text="@string/about_google_developer_groups"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        app:layout_constraintTop_toBottomOf="@id/image"
+                        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+                        app:layout_constraintStart_toStartOf="@+id/start_guideline" />
+
+                <TextView
+                        android:id="@+id/intro_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/title"
+                        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+                        android:text="@string/gdg_description_long"
+                        android:layout_marginTop="8dp"/>
+
+                <TextView
+                        android:id="@+id/subtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:text="@string/gdgs_are"
+                        app:layout_constraintStart_toEndOf="@id/start_guideline"
+                        app:layout_constraintEnd_toStartOf="@id/end_guideline"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintTop_toBottomOf="@+id/intro_text"/>
+                <TextView
+                        android:id="@+id/description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/subtitle"
+                        android:text="@string/gdg_description_bullets"
+                        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+                        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+                        android:layout_marginTop="8dp"/>
+
+                <ImageView
+                        android:id="@+id/end_image"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:srcCompat="@drawable/wtm"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="@dimen/spacing_normal"
+                        app:layout_constraintTop_toBottomOf="@id/description"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="3:1.5"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/start_guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintGuide_begin="@dimen/spacing_normal"
+                        android:orientation="vertical"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/end_guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/spacing_normal"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:clipToPadding="true"
-                tools:context=".home.HomeFragment">
-
-            <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    app:srcCompat="@drawable/behind"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="4:3"/>
-
-            <TextView
-                    android:id="@+id/title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/TextAppearance.Title"
-                    android:text="@string/about_google_developer_groups"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@id/image"
-                    app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-                    app:layout_constraintStart_toStartOf="@+id/start_guideline" />
-
-            <TextView
-                    android:id="@+id/intro_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/title"
-                    app:layout_constraintStart_toStartOf="@+id/start_guideline"
-                    app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-                    android:text="@string/gdg_description_long"
-                    android:layout_marginTop="8dp"/>
-
-            <TextView
-                    android:id="@+id/subtitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/TextAppearance.Subtitle"
-                    android:text="@string/gdgs_are"
-                    app:layout_constraintStart_toEndOf="@id/start_guideline"
-                    app:layout_constraintEnd_toStartOf="@id/end_guideline"
-                    android:layout_marginTop="13dp"
-                    app:layout_constraintTop_toBottomOf="@+id/intro_text"/>
-            <TextView
-                    android:id="@+id/description"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/subtitle"
-                    android:text="@string/gdg_description_bullets"
-                    app:layout_constraintStart_toStartOf="@+id/start_guideline"
-                    app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-                    android:layout_marginTop="8dp"/>
-
-            <ImageView
-                    android:id="@+id/end_image"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    app:srcCompat="@drawable/wtm"
-                    android:scaleType="centerCrop"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@id/description"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="3:1.5"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/start_guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintGuide_begin="16dp"
-                    android:orientation="vertical"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/end_guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_end="26dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                android:layout_gravity="end|bottom"
+                android:layout_margin="@dimen/spacing_normal"
+                app:srcCompat="@drawable/ic_gdg"
+                android:onClick="@{() -> viewModel.onFabClicked()}"
+        />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

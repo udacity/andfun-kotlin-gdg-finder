@@ -33,6 +33,7 @@
                     app:srcCompat="@drawable/behind"
                     android:id="@+id/imageView"
                     android:layout_marginTop="5dp"
+                    android:contentDescription="@string/stage_image_description"
                     app:layout_constraintTop_toBottomOf="@+id/textView9"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -43,17 +44,18 @@
 
             <EditText
                     android:id="@+id/EditTextName"
+                    android:hint="@string/your_name_label"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent" android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp" android:layout_marginBottom="4dp"
-                    app:layout_constraintBottom_toTopOf="@+id/EditTextEmail" android:singleLine="true"
-            >
+                    app:layout_constraintBottom_toTopOf="@+id/EditTextEmail" android:singleLine="true" >
                 <!--android:hint="@string/your_name_label"-->
             </EditText>
             <EditText
                     android:id="@+id/EditTextEmail"
+                    android:hint="@string/email_label"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent" android:layout_marginTop="4dp"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextName" app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +66,7 @@
             </EditText>
             <EditText
                     android:id="@+id/EditTextCity"
+                    android:hint="@string/city_label"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent" android:layout_marginTop="4dp"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextEmail" app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +77,7 @@
             </EditText>
             <EditText
                     android:id="@+id/EditTextCountry"
+                    android:hint="@string/country_label"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent" app:layout_constraintTop_toBottomOf="@+id/EditTextCity"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
@@ -84,6 +88,7 @@
             </EditText>
             <EditText
                     android:id="@+id/EditTextRegion"
+                    android:hint="@string/region_label"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent" android:layout_marginTop="4dp"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextCountry"
@@ -108,6 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/labelTextWhy"
+                    android:contentDescription="@string/motivation"
                     android:layout_marginTop="@dimen/spacing_normal"
                     android:layout_marginStart="32dp"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion" android:layout_marginBottom="1dp"
@@ -121,6 +127,7 @@
                     android:inputType="textMultiLine"
                     android:ems="10"
                     android:id="@+id/EditTextWhy"
+                    android:hint="@string/enter_motivation"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +143,7 @@
 
             <Button
                     android:id="@+id/button"
+                    android:contentDescription="@string/submit_button_description"
                     android:text="Ok"
                     android:layout_width="40dp"
                     android:layout_height="24dp"

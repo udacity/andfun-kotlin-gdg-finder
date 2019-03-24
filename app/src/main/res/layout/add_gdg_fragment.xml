@@ -22,8 +22,8 @@
                     android:text="@string/add_gdg"
                     android:textColor="#AAAAAA"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="16dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+                    android:layout_marginStart="@dimen/spacing_normal" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/spacing_normal" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="@dimen/spacing_normal"
                     android:id="@+id/textView9"/>
 
             <ImageView
@@ -101,14 +101,14 @@
             <!--app:layout_constraintTop_toBottomOf="@id/EditTextRegion"-->
             <!--android:orientation="vertical" app:layout_constraintStart_toStartOf="@+id/EditTextRegion"-->
             <!--app:layout_constraintEnd_toEndOf="@+id/EditTextRegion"-->
-            <!--android:layout_marginTop="16dp" app:layout_constraintBottom_toTopOf="@+id/button"-->
+            <!--android:layout_marginTop="@dimen/spacing_normal" app:layout_constraintBottom_toTopOf="@+id/button"-->
             <!--android:layout_marginBottom="8dp">-->
             <TextView
                     android:text="@string/motivation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/labelTextWhy"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/spacing_normal"
                     android:layout_marginStart="32dp"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion" android:layout_marginBottom="1dp"
                     app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"

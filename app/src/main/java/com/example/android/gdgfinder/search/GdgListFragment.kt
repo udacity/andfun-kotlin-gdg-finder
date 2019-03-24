@@ -61,6 +61,35 @@ class GdgListFragment : Fragment() {
             }
         })
 
+        viewModel.regionList.observe(viewLifecycleOwner, object: Observer<List<String>> {
+            override fun onChanged(data: List<String>?) {
+                data ?: return
+                // 1: Make a new Chip view for each item in the list
+                val chipGroup = binding.regionsList
+                val inflator = LayoutInflater.from(chipGroup.context)
+
+
+                val children = data.map { regionName ->
+                    val chip = inflator.inflate(R.layout.region, chipGroup, false) as Chip
+                    chip.text = regionName
+                    chip.tag = regionName
+                    chip.setOnCheckedChangeListener { button, isChecked ->
+                        viewModel.onFilterChanged(button.tag as String, isChecked)
+                    }
+                    chip
+                }
+
+                // 2: Remove any views already in the ChipGroup
+                chipGroup.removeAllViews()
+
+                // 3: Add the new children to the ChipGroup
+                for (chip in children) {
+                    chipGroup.addView(chip)
+                }
+
+            }
+        })
+
         setHasOptionsMenu(true)
         return binding.root
     }

@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // TODO: Turn on dark theme here
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
 
     /**

@@ -20,8 +20,14 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // TODO (06) Create a binding to the home_fragment layout and tell the binding
+        // about the viewModel.
+
         val view = inflater.inflate(R.layout.home_fragment, container, false)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        // TODO (07)  Register an observer on navigateToSearch, and have it navigate
+        // to gdgListFragment if shouldNavigate is true.
 
         return view
     }

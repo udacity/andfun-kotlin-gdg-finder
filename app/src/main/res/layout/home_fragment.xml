@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- TODO (01) Replace the ScrollView with a NestedScrollView, then wrap the
+     NestedScrollView with a CoordinatorLayout. -->
+
+<!-- TODO (02) Wrap the entire layout in a <layout> tag with a
+     viewModel <variable> for DataBinding. -->
+
+<!-- TODO (03)  Add a Floating Action Button (FAB) below
+     the NestedScrollView but still inside the CoordinatorLayout. -->
+
+<!-- TODO (04) Set the FAB’s image to ic_gdg and use layout_gravity to place it at
+     the bottom right of the screen. -->
+
+<!-- TODO (05) Add an onClick listener to the FAB, and use a data binding lambda
+     to call viewModel onFabClicked(). -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -23,6 +23,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="4:3"/>
 
+        <!-- TODO (03) Replace title's textSize and textColor with a style. -->
         <TextView
                 android:id="@+id/title"
                 android:layout_width="0dp"
@@ -46,6 +47,7 @@
                 android:text="@string/gdg_description_long"
                 android:layout_marginTop="8dp"/>
 
+        <!-- TODO (04) Replace subtitle's textSize and textColor with a style. -->
         <TextView
                 android:id="@+id/subtitle"
                 android:layout_width="0dp"

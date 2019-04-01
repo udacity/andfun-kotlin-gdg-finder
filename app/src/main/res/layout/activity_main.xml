@@ -10,6 +10,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+            <!-- TODO (05) Add a MaterialComponents.Dark.ActionBar theme to the Toolbar, and
+                 set the background to ?colorPrimaryDark. -->
             <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"

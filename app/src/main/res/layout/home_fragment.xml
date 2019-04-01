@@ -23,6 +23,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="4:3"/>
 
+        <!-- TODO (01) Open the Design tab and select the title TextView, then open its
+             attributes, scroll down to fontFamily, and select “More Fonts…” from the dropdown. -->
+
+        <!-- TODO (02) Select “Lobster Two, or any font you like, from the Resources
+             screen, then select OK to generate the font’s xml.  -->
         <TextView
                 android:id="@+id/title"
                 android:layout_width="0dp"

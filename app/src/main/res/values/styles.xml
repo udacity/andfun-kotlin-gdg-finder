@@ -1,6 +1,5 @@
 <resources>
 
-    <!-- TODO (03) Add a custom attribute to AppTheme to replace textAppearanceHeadline6. -->
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -9,18 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/lobster_two</item>
         <item name="fontFamily">@font/lobster_two</item>
+        <item name="textAppearanceHeadline6">@style/CustomHeadline6</item>
     </style>
 
-    <!-- TODO (02) Delete the Title and Subtitle styles. -->
-    <style name="TextAppearance.Title" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">#555555</item>
-    </style>
-
-    <style name="TextAppearance.Subtitle" parent="TextAppearance.Title" >
+    <style name="CustomHeadline6" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textSize">18sp</item>
     </style>
-
-    <!-- TODO (04) Define a CustomHeadline6 style that extends the default Material Design style. -->
 
 </resources>

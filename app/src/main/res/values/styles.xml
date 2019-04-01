@@ -10,4 +10,10 @@
         <item name="fontFamily">@font/lobster_two</item>
     </style>
 
+    <!-- TODO (01) define a TextAppearance.Title style that extends TextAppearance.MaterialComponents.Headline6,
+         and give it the same attributes you used for the title TextView home_fragment.xml. -->
+
+    <!-- TODO (02) define a TextAppearance.Subtitle style that extends TextAppearance.Title, and give
+         it the same attributes you used for the subtitle TextView in home_fragment.xml. -->
+
 </resources>

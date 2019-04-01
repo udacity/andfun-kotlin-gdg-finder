@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- TODO (03) Add a “fontFamily” attribute to apply your downloadable font to the entire app. -->
     </style>
 
 </resources>

@@ -18,6 +18,8 @@
             tools:context="com.example.android.gdg.gdglist.GdgListFragment"
             android:onClick="@{() -> clickListener.onClick(chapter)}">
 
+        <!-- TODO (03) Replace hardcoded 16dp values with the spacing_normal dimen resource. -->
+
         <ImageView
                 android:id="@+id/gdg_image"
                 android:layout_width="50dp"

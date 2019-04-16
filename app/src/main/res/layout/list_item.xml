@@ -18,7 +18,6 @@
             tools:context="com.example.android.gdg.gdglist.GdgListFragment"
             android:onClick="@{() -> clickListener.onClick(chapter)}">
 
-        <!-- TODO (02) Change Left to Start in the ImageView’s layoutConstraint and layoutMargin. -->
         <ImageView
                 android:id="@+id/gdg_image"
                 android:layout_width="50dp"
@@ -26,9 +25,9 @@
                 app:srcCompat="@drawable/ic_gdg"
                 android:layout_marginBottom="26dp"
                 android:layout_marginTop="26dp"
-                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginStart="@dimen/spacing_normal"
                 android:contentDescription="TODO"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 

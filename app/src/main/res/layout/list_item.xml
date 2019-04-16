@@ -18,8 +18,6 @@
             tools:context="com.example.android.gdg.gdglist.GdgListFragment"
             android:onClick="@{() -> clickListener.onClick(chapter)}">
 
-        <!-- TODO (03) Replace hardcoded 16dp values with the spacing_normal dimen resource. -->
-
         <ImageView
                 android:id="@+id/gdg_image"
                 android:layout_width="50dp"
@@ -27,7 +25,7 @@
                 app:srcCompat="@drawable/ic_gdg"
                 android:layout_marginBottom="26dp"
                 android:layout_marginTop="26dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="@dimen/spacing_normal"
                 android:contentDescription="TODO"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -37,8 +35,8 @@
                 android:id="@+id/chapter_name"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
                 android:text="@{chapter.name}"
                 app:layout_constraintStart_toEndOf="@+id/gdg_image"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- TODO (01) Define a spacing_normal dimen with a value of 16dp. -->
+    <dimen name="spacing_normal">16dp</dimen>
 </resources>

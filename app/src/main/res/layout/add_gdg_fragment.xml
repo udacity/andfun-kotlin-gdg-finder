@@ -17,6 +17,10 @@
                 android:layout_height="wrap_content"
                 tools:context=".add.AddGdgFragment">
 
+            <!-- TODO (01) Add content descriptors to ImageViews. -->
+
+            <!-- TODO (02) Add hints to TextViews. -->
+
             <TextView
                     android:id="@+id/textViewIntro"
                     android:layout_width="match_parent"

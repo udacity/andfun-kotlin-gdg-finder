@@ -1,5 +1,10 @@
 <resources>
 
+    <!-- TODO (01) Replace colors.xml with the one exported from the COLOR TOOL, or
+         you can copy and paste the colors directly from the exercise into colors.xml. -->
+
+    <!-- TODO (02) Add the color palette to AppTheme. -->
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->

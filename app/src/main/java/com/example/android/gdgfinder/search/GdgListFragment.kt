@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.android.gdgfinder.databinding.FragmentGdgListBinding
 import com.google.android.gms.location.*
 import com.google.android.material.snackbar.Snackbar
+import com.example.android.gdgfinder.R
 
 private const val LOCATION_PERMISSION_REQUEST = 1
 
@@ -56,6 +57,18 @@ class GdgListFragment : Fragment() {
                 }
             }
         })
+
+        // TODO (04) Create an observer on viewModel.regionList. Override the required
+        // onChanged() method to include the following changes.
+
+        // TODO (05) Create a new layoutInflator from the ChipGroup.
+
+        // TODO (06) Use the map() function to create a Chip for each item in regionList and
+        // return the results as a new list called children.
+
+        // TODO (07) Call chipGroup.removeAllViews() to remove any views already in chipGroup.
+
+        // TODO (08)  Iterate through the list of children and add each chip to chipGroup.
 
         setHasOptionsMenu(true)
         return binding.root

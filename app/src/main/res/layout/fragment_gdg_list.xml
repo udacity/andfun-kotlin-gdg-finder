@@ -24,6 +24,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0">
 
+        <!-- TODO (01) Create a ChipGroup and set singleLine and singleSelection attributes to true. -->
         </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView

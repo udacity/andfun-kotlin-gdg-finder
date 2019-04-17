@@ -35,6 +35,9 @@ class AddGdgFragment : Fragment() {
                     Snackbar.LENGTH_SHORT // How long to display the message.
                 ).show()
                 viewModel.doneShowingSnackbar()
+
+                // TODO (01) Use the binding to set the button's text and content description.
+
             }
         })
 

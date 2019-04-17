@@ -17,16 +17,13 @@
                 android:layout_height="wrap_content"
                 tools:context=".add.AddGdgFragment">
 
-            <!-- TODO (01) Add content descriptors to ImageViews. -->
-
-            <!-- TODO (02) Add hints to TextViews. -->
-
             <TextView
                     android:id="@+id/textViewIntro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/add_gdg"
                     android:textColor="#AAAAAA"
+                    android:contentDescription="@string/add_gdg"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +39,7 @@
                     app:srcCompat="@drawable/behind"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="2dp"
+                    android:contentDescription="@string/stage_image_description"
                     app:layout_constraintTop_toBottomOf="@+id/textViewIntro"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:layout_marginTop="8dp"
+                    android:hint="@string/your_name_label"
                     app:layout_constraintTop_toBottomOf="@+id/imageView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,6 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:layout_marginTop="4dp"
+                    android:hint="@string/email_label"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextName"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="32dp"
@@ -80,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:layout_marginTop="4dp"
+                    android:hint="@string/city_label"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextEmail"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="32dp"
@@ -92,6 +93,7 @@
                     android:id="@+id/EditTextCountry"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
+                    android:hint="@string/country_label"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextCity"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="32dp"
@@ -106,6 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:layout_marginTop="4dp"
+                    android:hint="@string/region_label"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextCountry"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="32dp"
@@ -136,6 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginStart="32dp"
+                    android:contentDescription="@string/motivation"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion"
                     android:layout_marginBottom="1dp"
                     app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"
@@ -146,6 +150,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
+                    android:hint="@string/enter_motivation"
                     android:ems="10"
                     app:layout_constraintTop_toBottomOf="@+id/EditTextRegion"
                     app:layout_constraintStart_toStartOf="parent"

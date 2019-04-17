@@ -17,13 +17,11 @@
                 android:layout_height="wrap_content"
                 tools:context=".add.AddGdgFragment">
 
-            <!-- TODO (05) Remove textViewIntro’s textColor. -->
             <TextView
                     android:id="@+id/textViewIntro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/add_gdg"
-                    android:textColor="#AAAAAA"
                     android:contentDescription="@string/add_gdg"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="16dp"
@@ -157,21 +155,14 @@
 
             </LinearLayout>
 
-            <!-- TODO (02) Change the button's text from "Ok" to "@string/submit". -->
-            <!-- TODO (03) Add a liveRegion to the button, and set it to "polite". -->
-            <!-- TODO (04) Change the button’s width and height to wrap_content, then
-                 remove its backgroundTint, textColor, and textSize attributes. -->
             <Button
                     android:id="@+id/button"
-                    android:text="Ok"
-                    android:layout_width="40dp"
-                    android:layout_height="24dp"
+                    android:text="@string/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/contentGroup"
-                    android:backgroundTint="#00FF00"
-                    android:textColor="#FF0000"
-                    android:textSize="12sp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="40dp"
                     android:onClick="@{() -> viewModel.onSubmitApplication()}"/>

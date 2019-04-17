@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- TODO (02) Replace the LinearLayout with a Chip view and set its width and height to wrap_content. -->
+
+<!-- TODO (03) Add a style attribute, and using autocomplete, assign it to the Chip.Choice style. -->
+
+<!-- TODO (09) Add checkedIconVisible=true so the Chip will show a checkmark when it’s selected. -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+</LinearLayout>

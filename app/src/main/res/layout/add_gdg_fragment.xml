@@ -103,6 +103,9 @@
                     app:layout_constraintBottom_toTopOf="@+id/EditTextRegion"
                     android:layout_marginTop="4dp"
                     android:singleLine="true"/>
+
+            <!-- TODO (03) Update EditTextRegion’s bottom constraint to reflect the new wrapper layout
+                 instead of the individual elements. -->
             <EditText
                     android:id="@+id/EditTextRegion"
                     android:layout_height="wrap_content"
@@ -118,6 +121,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/EditTextWhy"
                     android:singleLine="true"/>
 
+            <!-- TODO (01) Uncomment the LinearLayout code surrounding labelTextWhy and EditTextWhy. -->
             <!--wrap in a layout to group-->
             <!--<LinearLayout -->
             <!--android:id="@+id/contentGroup"-->
@@ -132,6 +136,7 @@
             <!--app:layout_constraintBottom_toTopOf="@+id/button"-->
             <!--android:layout_marginBottom="8dp">-->
 
+            <!-- TODO (02) Remove layoutMargins from  labelTextWhy and EditTextWhy. -->
             <TextView
                     android:id="@+id/labelTextWhy"
                     android:text="@string/motivation"
@@ -163,6 +168,8 @@
 
             <!--</LinearLayout>-->
 
+            <!-- TODO (04) Update the button’s top constraint to reflect the new wrapper layout
+                 instead of the individual elements. -->
             <Button
                     android:id="@+id/button"
                     android:text="Ok"

@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setupNavigation()
+
+        // TODO (02) Use AppCompatDelegate.setDefaultNightMode() to turn on the dark theme.
     }
 
     /**

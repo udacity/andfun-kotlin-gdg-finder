@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-private const val BASE_URL = "https://developers.google.com/community/gdg/directory/"
+private const val BASE_URL = "https://developers.google.com/community/gdg/groups/"
 interface GdgApiService {
     @GET("directory.json")
     fun getChapters():

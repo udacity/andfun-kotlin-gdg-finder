@@ -9,9 +9,9 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-private const val BASE_URL = "https://developers.google.com/community/gdg/directory/"
+private const val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com/"
 interface GdgApiService {
-    @GET("directory.json")
+    @GET("gdg-directory.json")
     fun getChapters():
     // The Coroutine Call Adapter allows us to return a Deferred, a Job with a result
             Deferred<GdgResponse>

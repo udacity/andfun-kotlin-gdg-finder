@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-private const val BASE_URL = "https://developers.google.com/programs/community/gdg/data/"
+private const val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com/"
 interface GdgApiService {
     @GET("gdg-directory.json")
     fun getChapters():

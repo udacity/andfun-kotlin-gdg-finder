@@ -12,7 +12,7 @@ buildscript {
         version_kotlin_coroutines = "1.2.1"
         version_lifecycle_extensions = "2.2.0"
         version_moshi = "1.8.0"
-        version_navigation = "1.0.0"
+        version_navigation = "2.3.0"
         version_constraint_layout = "2.0.0-rc1"
         version_glide = "4.8.0"
         version_retrofit = "2.5.0"
@@ -29,7 +29,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$version_gradle"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
-        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
     }
 }
 

@@ -1,4 +1,4 @@
-# Designing for Everyone - GDG Finder app
+# Desinging for Everyone - GDG Finder app
 
 This is the toy app for Lesson 10 of the [Android App Development in Kotlin course on Udacity](https://classroom.udacity.com/courses/ud9012/).
 
@@ -39,6 +39,10 @@ Access all branches from this tab.
 
 The branches are also accessible from the drop-down in the "Code" tab.
 
+## Requirements
+
+1. Android Studio (Jellyfish or above)
+2. JDK 21 with `JAVA_HOME` environment variable set. If you don't have JDK 21 installed or `JAVA_HOME` is not set, consider using a tool like `sdkman` to simplify the process. Refer to the sdkman documentation for installation instructions: [sdkman installation](https://sdkman.io/install)
 
 ## Working with the Course Code
 

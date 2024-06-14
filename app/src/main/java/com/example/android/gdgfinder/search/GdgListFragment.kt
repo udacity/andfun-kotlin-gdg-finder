@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -66,13 +64,13 @@ class GdgListFragment : Fragment() {
 
 
         viewModel.regionList.observe(viewLifecycleOwner, object: Observer<List<String>> {
-            override fun onChanged(data: List<String>?) {
-                data ?: return
+            override fun onChanged(value: List<String>) {
+                value
                 // 1: Make a new Chip view for each item in the list
                 val chipGroup = binding.regionsList
                 val inflator = LayoutInflater.from(chipGroup.context)
 
-                val children = data.map { regionName ->
+                val children = value.map { regionName ->
                     val chip = inflator.inflate(R.layout.region, chipGroup, false) as Chip
                     chip.text = regionName
                     chip.tag = regionName

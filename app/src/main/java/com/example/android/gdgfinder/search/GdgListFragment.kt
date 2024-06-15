@@ -60,12 +60,11 @@ class GdgListFragment : Fragment() {
         })
 
         viewModel.regionList.observe(viewLifecycleOwner, object: Observer<List<String>> {
-            override fun onChanged(data: List<String>?) {
-                data ?: return
+            override fun onChanged(value: List<String>) {
                 val chipGroup = binding.regionList
                 val inflator = LayoutInflater.from(chipGroup.context)
 
-                val children = data.map { regionName ->
+                val children = value.map { regionName ->
                     val chip = inflator.inflate(R.layout.region, chipGroup, false) as Chip
                     chip.text = regionName
                     chip.tag = regionName

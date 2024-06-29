@@ -28,7 +28,7 @@ class GdgListFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         val binding = FragmentGdgListBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
@@ -46,9 +46,9 @@ class GdgListFragment : Fragment() {
         binding.gdgChapterList.adapter = adapter
 
         viewModel.showNeedLocation.observe(viewLifecycleOwner, object: Observer<Boolean> {
-            override fun onChanged(show: Boolean?) {
+            override fun onChanged(value: Boolean) {
                 // Snackbar is like Toast but it lets us show forever
-                if (show == true) {
+                if (value == true) {
                     Snackbar.make(
                         binding.root,
                         "No location. Enable location in settings (hint: test with Maps) then check app permissions!",
@@ -123,8 +123,8 @@ class GdgListFragment : Fragment() {
 
         val request = LocationRequest().setPriority(LocationRequest.PRIORITY_LOW_POWER)
         val callback = object: LocationCallback() {
-            override fun onLocationResult(locationResult: LocationResult?) {
-                val location = locationResult?.lastLocation ?: return
+            override fun onLocationResult(locationResult: LocationResult) {
+                val location = locationResult.lastLocation ?: return
                 viewModel.onLocationUpdated(location)
             }
         }

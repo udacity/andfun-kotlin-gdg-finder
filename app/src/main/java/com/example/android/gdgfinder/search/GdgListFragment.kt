@@ -29,7 +29,7 @@ class GdgListFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         val binding = FragmentGdgListBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
@@ -47,9 +47,9 @@ class GdgListFragment : Fragment() {
         binding.gdgChapterList.adapter = adapter
 
         viewModel.showNeedLocation.observe(viewLifecycleOwner, object: Observer<Boolean> {
-            override fun onChanged(show: Boolean?) {
+            override fun onChanged(value: Boolean) {
                 // Snackbar is like Toast but it lets us show forever
-                if (show == true) {
+                if (value == true) {
                     Snackbar.make(
                         binding.root,
                         "No location. Enable location in settings (hint: test with Maps) then check app permissions!",
@@ -60,12 +60,12 @@ class GdgListFragment : Fragment() {
         })
 
         viewModel.regionList.observe(viewLifecycleOwner, object: Observer<List<String>> {
-            override fun onChanged(data: List<String>?) {
-                data ?: return
+            override fun onChanged(value: List<String>) {
+                value
                 val chipGroup = binding.regionList
                 val inflator = LayoutInflater.from(chipGroup.context)
 
-                val children = data.map { regionName ->
+                val children = value.map { regionName ->
                     val chip = inflator.inflate(R.layout.region, chipGroup, false) as Chip
                     chip.text = regionName
                     chip.tag = regionName
@@ -136,8 +136,8 @@ class GdgListFragment : Fragment() {
 
         val request = LocationRequest().setPriority(LocationRequest.PRIORITY_LOW_POWER)
         val callback = object: LocationCallback() {
-            override fun onLocationResult(locationResult: LocationResult?) {
-                val location = locationResult?.lastLocation ?: return
+            override fun onLocationResult(locationResult: LocationResult) {
+                val location = locationResult.lastLocation ?: return
                 viewModel.onLocationUpdated(location)
             }
         }

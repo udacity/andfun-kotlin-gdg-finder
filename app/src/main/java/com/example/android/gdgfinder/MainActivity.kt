@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -38,7 +39,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun setupNavigation() {
         // first find the nav controller
-        val navController = findNavController(R.id.nav_host_fragment)
+        val navController = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
+            ?.findNavController()!!
 
         setSupportActionBar(binding.toolbar)
 

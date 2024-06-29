@@ -1,8 +1,6 @@
 package com.example.android.gdgfinder.search
 
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,7 +27,7 @@ class GdgListFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         val binding = FragmentGdgListBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
@@ -38,34 +36,40 @@ class GdgListFragment : Fragment() {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
-        val adapter = GdgListAdapter(GdgClickListener { chapter ->
-            val destination = Uri.parse(chapter.website)
-            startActivity(Intent(Intent.ACTION_VIEW, destination))
+        val adapter = GdgListAdapter(GdgClickListener {
+            //this.findNavController().navigate(GdgListFragmentDirections.actionShowDetail(it))
+
+            Snackbar.make(
+                activity!!.findViewById(android.R.id.content),
+                it.name,
+                Snackbar.LENGTH_SHORT // How long to display the message.
+            ).show()
         })
 
         // Sets the adapter of the RecyclerView
         binding.gdgChapterList.adapter = adapter
 
         viewModel.showNeedLocation.observe(viewLifecycleOwner, object: Observer<Boolean> {
-            override fun onChanged(show: Boolean?) {
+            override fun onChanged(value: Boolean) {
                 // Snackbar is like Toast but it lets us show forever
-                if (show == true) {
+                if (value == true) {
                     Snackbar.make(
                         binding.root,
                         "No location. Enable location in settings (hint: test with Maps) then check app permissions!",
-                        Snackbar.LENGTH_LONG
+                        Snackbar.LENGTH_INDEFINITE
                     ).show()
                 }
             }
         })
 
+
         viewModel.regionList.observe(viewLifecycleOwner, object: Observer<List<String>> {
-            override fun onChanged(data: List<String>?) {
-                data ?: return
+            override fun onChanged(value: List<String>) {
+                // 1: Make a new Chip view for each item in the list
                 val chipGroup = binding.regionList
                 val inflator = LayoutInflater.from(chipGroup.context)
 
-                val children = data.map { regionName ->
+                val children = value.map { regionName ->
                     val chip = inflator.inflate(R.layout.region, chipGroup, false) as Chip
                     chip.text = regionName
                     chip.tag = regionName
@@ -75,12 +79,15 @@ class GdgListFragment : Fragment() {
                     chip
                 }
 
+                // 2: Remove any views already in the ChipGroup
                 chipGroup.removeAllViews()
 
+                // 3: Add the new children to the ChipGroup
                 for (chip in children) {
                     chipGroup.addView(chip)
                 }
             }
+
         })
 
         setHasOptionsMenu(true)
@@ -136,8 +143,8 @@ class GdgListFragment : Fragment() {
 
         val request = LocationRequest().setPriority(LocationRequest.PRIORITY_LOW_POWER)
         val callback = object: LocationCallback() {
-            override fun onLocationResult(locationResult: LocationResult?) {
-                val location = locationResult?.lastLocation ?: return
+            override fun onLocationResult(locationResult: LocationResult) {
+                val location = locationResult.lastLocation ?: return
                 viewModel.onLocationUpdated(location)
             }
         }
